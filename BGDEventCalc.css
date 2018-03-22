@@ -1,0 +1,26 @@
+.calculator-box{
+    margin: auto;
+    width:500px;
+    height:375px;
+}
+
+.memory-box{
+    margin: auto;
+    width:500px;
+    height: 100px;
+}
+
+.total-pt{
+    display: inline;
+    font-size: 28pt;
+    font-weight: bold;
+}
+
+.add-list-button{
+    float: right; 
+    margin-top: 10px;
+}
+
+.temp-list-title{
+    font-size: 16pt;
+}

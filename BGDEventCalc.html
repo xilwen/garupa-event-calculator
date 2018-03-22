@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>BanG Dream! 活動pt計算機</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.0/css/bulma.min.css" integrity="sha256-HEtF7HLJZSC3Le1HcsWbz1hDYFPZCqDhZa9QsCgVUdw="
+        crossorigin="anonymous" />
+    <link rel="stylesheet" type="text/css" href="BGDEventCalc.css">
+    <!--<script src="https://code.jquery.com/jquery-1.10.2.js"></script>-->
+    <script type="text/javascript" src="BGDEventCalc.js"></script>
+</head>
+
+<body onload="updateScore();">
+    <section class="hero is-dark is-small">
+        <div class="hero-body">
+            <div class="container has-text-centered">
+                <br>
+                <h1 class="title">
+                    BanG Dream!
+                </h1>
+                <h2 class="subtitle">
+                    活動 pt 簡易計算機
+                </h2>
+            </div>
+        </div>
+    </section>
+
+    <br>
+    <div class="box calculator-box">
+        個人得分
+        <div class="field">
+            <div class="control">
+                <input class="input is-primary" id="personalScore" type="text" value="1060000" oninput="updateScore();">
+            </div>
+        </div>
+        隊友單人平均 (單人模式請輸入 0)
+        <div class="field">
+            <div class="control">
+                <input class="input is-info" id="teammateAverage" type="text" value="1200000" oninput="updateScore();">
+            </div>
+        </div>
+        加成 %
+        <div class="field">
+            <div class="control">
+                <input class="input is-success" id="scoreRatio" type="text" value="130" oninput="updateScore();">
+            </div>
+        </div>
+        Boost 倍數(1~3)
+        <div class="field">
+            <div class="control">
+                <input class="input is-warning" id="boostRatio" type="text" value="3" oninput="updateScore();">
+            </div>
+        </div>
+        &nbsp;
+        <p class="total-pt" id="totalPt">0</p>&nbsp;&nbsp;活動pt
+        <a class="button is-danger add-list-button" onclick="addToMemoryList();">加入暫存清單</a>
+    </div>
+
+    <div class="box memory-box" id="memoryBox">
+        <strong class="temp-list-title">暫存清單</strong>(關閉網頁就會清空)
+        <table class="table">
+            <thead>
+                <th>個人得分</th>
+                <th>隊友單人平均</th>
+                <th>加成 %</th>
+                <th>Boost</th>
+                <th>預計活動 pt</th>
+            </thead>
+            <tbody id="memoryBoxTbody">                
+            </tbody>
+        </table>
+    </div>
+
+
+    <center>
+        <a href="https://kkeionet.wordpress.com/2017/06/21/bang-dream-guide/">公式資料來源</a>
+        <br>
+        <br>
+        <img src="rinrin.jpg" width="36" height="68">
+    </center>
+</body>
+
+</html>
