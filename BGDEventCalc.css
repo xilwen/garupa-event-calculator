@@ -1,12 +1,12 @@
 .calculator-box{
     margin: auto;
-    width:500px;
+    width:80%;
     height:375px;
 }
 
 .memory-box{
     margin: auto;
-    width:500px;
+    width:80%;
     height: 100px;
 }
 
@@ -23,4 +23,8 @@
 
 .temp-list-title{
     font-size: 16pt;
+}
+
+th {
+    white-space: nowrap;
 }
