@@ -1,18 +1,27 @@
+var personalScore = 0;
+var teammateAverage = 0;
+var scoreRatio = 0;
+var boostRatio = 0;
+var totalScore = 0;
+
+function getScoreFromInput(){
+    personalScore = parseInt(document.getElementById("personalScore").value);
+    teammateAverage = parseInt(document.getElementById('teammateAverage').value);
+    scoreRatio = parseInt(document.getElementById('scoreRatio').value);
+    boostRatio = parseInt(document.getElementById('boostRatio').value);
+}
+
 function updateScore() {
-    var personalScore = parseFloat(document.getElementById("personalScore").value);
-    var teammateAverage = parseFloat(document.getElementById('teammateAverage').value);
-    var scoreRatio = parseFloat(document.getElementById('scoreRatio').value);
-    var boostRatio = parseFloat(document.getElementById('boostRatio').value);
-    var totalScore = ((50 + (personalScore * 0.0001) + (teammateAverage * 4 * 0.00001)) * ((scoreRatio + 100) / 100)) * boostRatio * 5;
-    document.getElementById("totalPt").innerHTML = parseInt(totalScore);
+    getScoreFromInput();
+    totalScore = Math.floor(
+        ((50.0 + Math.floor(personalScore / 10000.0) + Math.floor(teammateAverage * 4.0 / 100000.0)) *
+            ((scoreRatio + 100.0) / 100.0))) *
+        boostRatio * 5;
+    document.getElementById("totalPt").innerHTML = totalScore;
 }
 
 function addToMemoryList() {
-    var personalScore = parseFloat(document.getElementById("personalScore").value);
-    var teammateAverage = parseFloat(document.getElementById('teammateAverage').value);
-    var scoreRatio = parseFloat(document.getElementById('scoreRatio').value);
-    var boostRatio = parseFloat(document.getElementById('boostRatio').value);
-    var totalScore = parseInt(((50 + (personalScore * 0.0001) + (teammateAverage * 4 * 0.00001)) * ((scoreRatio + 100) / 100)) * boostRatio * 5);
+    updateScore();
     document.getElementById("memoryBoxTbody").innerHTML += "<tr>" +
         "<td>" + personalScore + "</td>" +
         "<td>" + teammateAverage + "</td>" +
